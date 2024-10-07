@@ -21,6 +21,8 @@ type InterstellarExperience @key(fields: "name") {
   destinationId: ID!
   "A link to NASA for more information on this experience."
   nasaPosterUrl: String!
+  "For demo purposes, triggers an error in the subgraph"
+  unreliableDescription: String
 }
 
 """
