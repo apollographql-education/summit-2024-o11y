@@ -26,6 +26,14 @@ const server = new ApolloServer({
       Query: {
         experiences: () => experiences,
       },
+      InterstellarExperience: {
+        unreliableDescription: (parent: any) => {
+          if (Math.random() < 0.9) {
+            throw new Error("Something went wrong.");
+          }
+          return parent.description;
+        },
+      },
       Mutation: {
         submitInsightsExperienceLevel() {
           return true;
